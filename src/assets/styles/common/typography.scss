@@ -1,0 +1,27 @@
+h1,
+.h1 {
+  line-height: 1;
+  font-family: $font-family-base;
+  font-weight: 600;
+  margin-bottom: 4rem;
+}
+
+h2,
+.h2 {
+  line-height: 1;
+  font-family: $font-family-base;
+  font-weight: 600;
+}
+
+h3,
+.h3 {
+  line-height: 1;
+  font-family: $font-family-base;
+  font-weight: bold;
+}
+
+a {
+  color: $cream;
+  font-family: $font-family-base;
+  margin-bottom: 1rem;
+}
