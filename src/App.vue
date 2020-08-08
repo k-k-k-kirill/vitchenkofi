@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <h1>Welcome to the future!</h1>
+  <div id="app" ref="appRef">
   </div>
 </template>
 
@@ -10,8 +9,9 @@ import * as THREE from './assets/scripts/three.r95.min' // eslint-disable-line
 export default {
   name: 'App',
   mounted() {
+    let appRef = this.$refs.appRef
     window.VANTA.WAVES({
-      el: "html",
+      el: appRef,
       mouseControls: true,
       touchControls: true,
       scale: 1.00,
@@ -27,5 +27,8 @@ export default {
 </script>
 
 <style>
-
+  #app {
+    width: 100vw;
+    height: 100vh;
+  }
 </style>
