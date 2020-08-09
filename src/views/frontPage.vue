@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
             <div class="col-lg-6">
                 <h1>
                     Hello.<br>
-                    I am <OwnerPhotoReveal>Kirill.</OwnerPhotoReveal><br>
+                    I am <OwnerPhotoReveal imageUrl="@assets/images/mugshot.png">Kirill.</OwnerPhotoReveal><br>
                     Front end<br>
                     developer.
                 </h1>
@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import OwnerPhotoReveal from '../components/OwnerPhotoReveal/OwnerPhotoReveal'
+import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 
 export default {
-    name: 'Front Page',
+    name: 'FrontPage',
     components: {
         'OwnerPhotoReveal' : OwnerPhotoReveal
     }

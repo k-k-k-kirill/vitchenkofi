@@ -1,18 +1,19 @@
 <template>
-    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" data-img="'. $photo_arr['url'] .'">
+    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" data-img="./mugshot.png">
         <slot />
     </a>
 </template>
 
 <script>
     // Animations
-    import OwnerPhotoEffect from '../../assets/scripts/animations/OwnerPhotoEffect'
+    import OwnerPhotoEffect from '../assets/scripts/animations/OwnerPhotoEffect'
 
     export default {
-        name: 'Owner Photo Reveal',
+        name: 'OwnerPhotoReveal',
+        props: ['imageUrl'],
         mounted() {
             let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
-            OwnerPhotoEffect(ownerPhotoRevealRef)
+            new OwnerPhotoEffect(ownerPhotoRevealRef)
         }
     }
 </script>
@@ -95,6 +96,10 @@
         margin: 0 0 1.5rem 0;
         padding: 0.5rem 0;
         cursor: pointer;
+
+        &:hover {
+            color: $white;
+        }
     }
 
     .block__title span,
