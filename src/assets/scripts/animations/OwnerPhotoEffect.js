@@ -49,7 +49,6 @@ export default class HoverImgFx3 {
     }
     
     animateLetters() {
-        console.log(this.DOM.letters)
         TweenMax.killTweensOf(this.DOM.letters);
         TweenMax.set(this.DOM.letters, {opacity: 0});
         TweenMax.staggerTo(this.DOM.letters, 0.2, {

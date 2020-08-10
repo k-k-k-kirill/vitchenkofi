@@ -8,7 +8,7 @@
 import * as THREE from './assets/scripts/background/three.r95.min' // eslint-disable-line
 
 // Views
-import FrontPage from './views/frontPage'
+import FrontPage from './views/FrontPage'
 
 export default {
   name: 'App',
