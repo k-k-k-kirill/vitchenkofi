@@ -3,38 +3,21 @@
 // *************
 
 html {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  
-    main {
-      flex-grow: 1;
-    }
-  }
-  
-  .owner-links {
-    position: fixed;
-    right: -160px;
-    top: 50%;
-    transform: rotateZ(-90deg);
-  
-    a {
-      margin-right: 2rem;
-      transition: all 0.15s ease-in-out;
-  
-      &:hover,
-      &:focus,
-      &:active,
-      &.active {
-        text-decoration: none;
-        color: $brick;
-      }
-    }
-  }
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.vanta-canvas {
+  z-index: -1 !important;
+}

@@ -1,20 +1,15 @@
 <template>
   <div id="app" ref="appRef">
-    <FrontPage />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import * as THREE from './assets/scripts/background/three.r95.min' // eslint-disable-line
-
-// Views
-import FrontPage from './views/FrontPage'
+import WAVES from './assets/scripts/background/vanta.waves.min.js' // eslint-disable-line
+import * as THREE from './assets/scripts/background/three.r95.min'
 
 export default {
   name: 'App',
-  components: {
-    'FrontPage' : FrontPage
-  },
   mounted() {
     let appRef = this.$refs.appRef
     window.VANTA.WAVES({
@@ -36,7 +31,8 @@ export default {
 <style lang="scss">
   #app {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    z-index: 9999;
   }
 
   @import './assets/styles/main.scss';

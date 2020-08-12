@@ -1,6 +1,5 @@
 <template>
     <div>
-        <SiteOwner />
         <Layout>
             <FullHeightSection :scrollable="true">
                 <div class="row">
@@ -11,6 +10,11 @@
                             Front end<br>
                             developer.
                         </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <Nav />
                     </div>
                 </div>
             </FullHeightSection>
@@ -26,16 +30,16 @@
 <script>
 import Layout from '../components/Layout'
 import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
-import SiteOwner from '../components/SiteOwner'
 import FullHeightSection from '../components/FullHeightSection'
+import Nav from '../components/Nav'
 
 export default {
     name: 'FrontPage',
     components: {
         'Layout' : Layout,
         'OwnerPhotoReveal' : OwnerPhotoReveal,
-        'SiteOwner' : SiteOwner,
-        'FullHeightSection' : FullHeightSection
+        'FullHeightSection' : FullHeightSection,
+        'Nav' : Nav
     }
 }
 </script>

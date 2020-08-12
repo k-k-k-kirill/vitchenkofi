@@ -12,12 +12,7 @@ export default {
             type: Boolean,
             default: false
         }
-    ],
-    methods: {
-        onScroll : function () {
-            console.log(this.props.scrollable)
-        }
-    }
+    ]
 }
 </script>
 
