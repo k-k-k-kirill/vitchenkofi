@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="text-uppercase">Kirill Vitchenko</h3>
+                    <router-link to='/'><h3 class="text-uppercase">Kirill Vitchenko</h3></router-link>
                 </div>
             </div>  
         </div>
@@ -18,8 +18,7 @@ export default {
 
 <style lang="scss">
   .owner-details {
-    position: fixed;
-    top: 60px;
+    padding-top: 60px;
     font-weight: 900;
     width: 100vw;
   }

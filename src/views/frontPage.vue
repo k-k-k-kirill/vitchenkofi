@@ -6,7 +6,7 @@
                     <div class="col-lg-6">
                         <h1>
                             Hello.<br>
-                            I am <OwnerPhotoReveal imageUrl="@assets/images/mugshot.png">Kirill.</OwnerPhotoReveal><br>
+                            I am <OwnerPhotoReveal>Kirill.</OwnerPhotoReveal><br>
                             Front end<br>
                             developer.
                         </h1>
@@ -19,8 +19,17 @@
                 </div>
             </FullHeightSection>
             <FullHeightSection>
-                <div class="container">
-                    <h1>Another full height section</h1>
+                <div class="row">
+                    <div class="col-lg-5 pt-3">
+                        <ProjectTeaser classes="d-block mb-4" url="https://www.facebook.com" title="Test project" :skills="skills" />
+                        <ProjectTeaser classes="d-block mb-4" url="https://www.facebook.com" title="Test project" :skills="skills" />
+                        <ProjectTeaser url="https://www.facebook.com" title="Test project" :skills="skills" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <BigLink route="/portfolio" title="All works" />
+                    </div>
                 </div>
             </FullHeightSection>
         </Layout>
@@ -32,6 +41,8 @@ import Layout from '../components/Layout'
 import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 import FullHeightSection from '../components/FullHeightSection'
 import Nav from '../components/Nav'
+import ProjectTeaser from '../components/ProjectTeaser'
+import BigLink from '../components/BigLink'
 
 export default {
     name: 'FrontPage',
@@ -39,7 +50,17 @@ export default {
         'Layout' : Layout,
         'OwnerPhotoReveal' : OwnerPhotoReveal,
         'FullHeightSection' : FullHeightSection,
-        'Nav' : Nav
+        'Nav' : Nav,
+        'ProjectTeaser' : ProjectTeaser,
+        'BigLink' : BigLink
+    },
+    data() {
+        return {
+            skills: [
+                'Twig',
+                'WordPress'
+            ]
+        }
     }
 }
 </script>

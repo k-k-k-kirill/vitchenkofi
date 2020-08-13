@@ -16,7 +16,7 @@ export default {
       el: appRef,
       mouseControls: true,
       touchControls: true,
-      scale: 1.00,
+      scale: 3.00,
       scaleMobile: 1.00,
       THREE: THREE,
       color: 0x0,
@@ -24,6 +24,11 @@ export default {
       waveSpeed: 0.25,
       zoom: 0.75
     })
+
+    console.log()
+  },
+  updated() {
+    window.VANTA.current.resize()
   }
 }
 </script>
@@ -31,7 +36,7 @@ export default {
 <style lang="scss">
   #app {
     width: 100vw;
-    min-height: 100vh;
+    min-height: 100%;
     z-index: 9999;
   }
 

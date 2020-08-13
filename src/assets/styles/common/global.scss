@@ -6,6 +6,7 @@ html {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -20,4 +21,16 @@ body {
 
 .vanta-canvas {
   z-index: -1 !important;
+}
+
+a {
+  transition: all 0.15s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+      text-decoration: none;
+      color: $brick;
+  }
 }

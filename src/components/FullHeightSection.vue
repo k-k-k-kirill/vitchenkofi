@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
     .full-height-section {
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
         padding: 100px 0;
     }

@@ -1,5 +1,4 @@
 import { TweenMax, TimelineMax, Expo} from 'gsap';
-import addSpans from '../../../utils/addSpans'
 
 //works fine
 const getMousePos = (e) => {
@@ -19,32 +18,19 @@ const getMousePos = (e) => {
 
 
 // Effect 3
-export default class HoverImgFx3 {
+export default class HoverImgFx {
     constructor(el) {
         this.DOM = {el: el};
-        addSpans(this.DOM.el)
         this.DOM.reveal = document.createElement('div');
-        this.DOM.reveal.className = 'hover-reveal';
+        this.DOM.reveal.className = 'hover-reveal hover-reveal-project';
         this.DOM.reveal.style.overflow = 'hidden';
-        this.DOM.reveal.innerHTML = `<div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
+        this.DOM.reveal.innerHTML = `<div class="hover-reveal__inner"><div class="hover-reveal__img hover-reveal__img-project" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
         this.DOM.el.appendChild(this.DOM.reveal);
         this.DOM.revealInner = this.DOM.reveal.querySelector('.hover-reveal__inner');
         this.DOM.revealInner.style.overflow = 'hidden';
         this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
-        this.DOM.letters = [...this.DOM.el.querySelectorAll('span')];
         this.initEvents();
 
-    }
-    
-    animateLetters() {
-        TweenMax.killTweensOf(this.DOM.letters);
-        TweenMax.set(this.DOM.letters, {opacity: 0});
-        TweenMax.staggerTo(this.DOM.letters, 0.2, {
-            ease: Expo.easeOut,
-            startAt: {x: '100%'},
-            x: '0%',
-            opacity: 1,
-        }, 0.03);
     }
 
     initEvents() {
@@ -54,13 +40,12 @@ export default class HoverImgFx3 {
                 left : document.body.scrollLeft + document.documentElement.scrollLeft, 
                 top : document.body.scrollTop + document.documentElement.scrollTop,
             };
-            this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
+            this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top - 150}px`;
             this.DOM.reveal.style.left = `${mousePos.x+20-docScrolls.left}px`;
         };
         this.mouseenterFn = (ev) => {
             this.positionElement(ev);
             this.showImage();
-            this.animateLetters();
         };
         this.mousemoveFn = ev => requestAnimationFrame(() => {
             this.positionElement(ev);
@@ -73,9 +58,12 @@ export default class HoverImgFx3 {
         this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
         this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
     }
+
     showImage() {
         TweenMax.killTweensOf(this.DOM.revealInner);
         TweenMax.killTweensOf(this.DOM.revealImg);
+
+        console.log('show image happened')
 
         this.tl = new TimelineMax({
             onStart: () => {
@@ -105,6 +93,7 @@ export default class HoverImgFx3 {
             scale: 1,
         }), 'begin');
     }
+
     hideImage() {
         TweenMax.killTweensOf(this.DOM.revealInner);
         TweenMax.killTweensOf(this.DOM.revealImg);
