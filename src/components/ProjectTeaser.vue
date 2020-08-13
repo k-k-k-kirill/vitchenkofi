@@ -1,5 +1,5 @@
 <template>
-    <a ref="projectTeaserRef" :href="url" class="teaser-vit-project" :class="classes" data-img="./mugshot.png">
+    <a ref="projectTeaserRef" :href="url" class="teaser-vit-project" :class="classes" data-img="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif">
         <h2 class="h2 teaser-vit-project__title">{{ title }}</h2>
             <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
                 {{ skillString }}

@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <router-link to='/'><h3 class="text-uppercase">Kirill Vitchenko</h3></router-link>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 </template>
