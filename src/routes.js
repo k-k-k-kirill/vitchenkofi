@@ -1,4 +1,4 @@
-import FrontPage from "./views/FrontPage.vue";
+import FrontPage from "./views/frontPage.vue";
 import Portfolio from "./views/Portfolio.vue";
 import RequestOffer from "./views/RequestOffer.vue";
 import About from "./views/About.vue";

@@ -1,6 +1,8 @@
 <template>
     <section class="full-height-section">
-        <slot />
+        <div class="full-height-section__content">
+            <slot />
+        </div>
     </section>
 </template>
 
@@ -21,5 +23,12 @@ export default {
         min-height: 100vh;
         width: 100vw;
         padding: 100px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__content {
+            width: 100%;
+        }
     }
 </style>
