@@ -1,12 +1,12 @@
 <template>
-    <textarea rows="6" :placeholder="placeholder" :value="value">
+    <textarea :class="classes" rows="6" :placeholder="placeholder" :value="value">
     </textarea>
 </template>
 
 <script>
     export default {
         name: 'Textarea',
-        props: [ 'placeholder' ],
+        props: [ 'placeholder', 'classes' ],
         data() {
             return {
                 value: ''
