@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-11 offset-lg-1">
                     <BigLink route="/request-offer" title="Request offer" />
                 </div>
             </div>

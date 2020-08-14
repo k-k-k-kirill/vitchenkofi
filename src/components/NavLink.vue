@@ -22,6 +22,7 @@ export default {
         &.active {
             text-decoration: none;
             color: $brick;
+            letter-spacing: 5px;
         }
     }
 </style>

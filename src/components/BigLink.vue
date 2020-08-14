@@ -30,7 +30,10 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: white;
+            background-image: url('https://media.giphy.com/media/ToMjGpM8Jfkwz7jPSI8/source.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
             opacity: 0;
             pointer-events: none;
             z-index: 8000;
@@ -58,9 +61,9 @@
 
         &:hover {
             a {
-                color: $black !important;
+                color: $white !important;
+                letter-spacing: 7px;
             }
-            
 
             & + div {
                 opacity: 1 !important;
@@ -70,7 +73,7 @@
             &::before {
                 transform: translateX(0) translateY(10%);
                 opacity: 1;
-                color: $black;
+                color: $white;
             }
         }
     }

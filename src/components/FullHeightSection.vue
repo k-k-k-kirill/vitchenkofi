@@ -22,7 +22,7 @@ export default {
     .full-height-section {
         min-height: 100vh;
         width: 100vw;
-        padding: 100px 0;
+        padding: 70px 0;
         display: flex;
         flex-direction: row;
         align-items: center;
