@@ -1,6 +1,6 @@
 <template>
     <div class="big-link__container">
-        <router-link :to="route"><h2 class="d-inline-block mt-7 portfolio-link big-link">{{ title }}</h2></router-link>
+        <h2 class="d-inline-block mt-7 big-link portfolio-link"><router-link class="" :to="route">{{ title }}</router-link></h2>
         <div class="portfolio-link__surprise"></div>
     </div>
 </template>
@@ -17,22 +17,26 @@
         letter-spacing: 3px;
         font-weight: normal;
         position: relative;
-
-        &__container {
-            &:hover {
-                .portfolio-link {
-                    &::after,
-                    &::before {
-                        transform: translateX(0) translateY(10%);
-                        opacity: 1;
-                        color: white;
-                    }
-                }
-            }
-        }
     }
 
     .portfolio-link {
+        position: relative;
+        z-index: 9999;
+
+        &__surprise {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 8000;
+            transition: all 0.15s ease-in-out;
+        }
+
         &::before {
             display: inline-block;
             content: "< ";
@@ -50,6 +54,21 @@
             margin-top: 1rem;
             opacity: 0;
             transition: all 0.15s ease-in-out;
+        }
+
+        &:hover {
+            z-index: 9999;
+
+            & + div {
+                opacity: 1 !important;
+            }
+
+            &::after,
+            &::before {
+                transform: translateX(0) translateY(10%);
+                opacity: 1;
+                color: white;
+            }
         }
     }
 </style>
