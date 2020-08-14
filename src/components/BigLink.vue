@@ -23,6 +23,10 @@
         position: relative;
         z-index: 9999;
 
+        a {
+            font-size: 5rem;
+        }
+
         &__surprise {
             content: "";
             position: fixed;
