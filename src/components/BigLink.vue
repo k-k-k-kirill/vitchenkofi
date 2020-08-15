@@ -70,7 +70,7 @@
             }
 
             & + div {
-                opacity: 1 !important;
+                opacity: 0.5 !important;
             }
 
             &::after,

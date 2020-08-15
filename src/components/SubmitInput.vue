@@ -1,6 +1,6 @@
 <template>
     <div :class="wrapperclasses">
-        <label v-if="label">{{ label }}</label>
+        <label v-if="label != ''">{{ label }}</label>
         <input type="submit" :value="value" />
     </div>
 </template>
@@ -8,7 +8,20 @@
 <script>
     export default {
        name: 'SubmitInput' ,
-       props: [ 'value', 'wrapperclasses' ]
+       props: {
+           value: {
+               type: String,
+               default: 'Submit'
+           },
+           wrapperclasses: {
+               type: String,
+               default: ''
+           },
+           label: {
+               type: String,
+               default: ''
+           }
+       }
     }
 </script>
 

@@ -7,27 +7,15 @@
 </template>
 
 <script>
-// Components
-import NavLink from './NavLink'
+    // Components
+    import NavLink from './NavLink'
 
-// Animations
-import navReposition from '../assets/scripts/animations/NavReposition'
-
-export default {
-    name : 'Nav',
-    components : {
-        'NavLink' : NavLink
-    }, 
-    mounted() {
-        let { navMenuRef } = this.$refs
-        navReposition(navMenuRef)
-    },
-    methods: {
-        onScroll : function () {
-            console.log('console loh')
+    export default {
+        name : 'Nav',
+        components : {
+            'NavLink' : NavLink
         }
     }
-}
 </script>
 
 <style lang="scss">

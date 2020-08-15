@@ -2,10 +2,10 @@
     <Layout>
         <FullHeightSection>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6 col-xl-4 mb-4 mb-xl-0">
                     <OfferRequestForm />
                 </div>
-                <div class="col-lg-4 offset-lg-1">
+                <div class="col-lg-4 col-xl-4 offset-xl-1">
                     <p class="lead mb-2">
                         Here you can request an offer from me by filling the form on the left. Please, note that I don't do graphic design, however, can recommend some of my partners.
                     </p>
@@ -13,6 +13,11 @@
                     <p class="lead">
                         By the way, the form has a secret. Will you be the one to find it?
                     </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <BigLink title="About" route="/about" />
                 </div>
             </div>
         </FullHeightSection>
@@ -23,13 +28,15 @@
     import Layout from '../components/Layout'
     import FullHeightSection from '../components/FullHeightSection'
     import OfferRequestForm from '../components/OfferRequestForm'
+    import BigLink from '../components/BigLink'
 
     export default {
         name : 'RequestOffer',
         components: {
             'FullHeightSection': FullHeightSection,
             'OfferRequestForm': OfferRequestForm,
-            'Layout': Layout
+            'Layout': Layout,
+            'BigLink': BigLink
         }
     }
 </script>

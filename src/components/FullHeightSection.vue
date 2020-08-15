@@ -7,15 +7,15 @@
 </template>
 
 <script>
-export default {
-    name : 'FullHeightSection',
-    props : [
-        {
-            type: Boolean,
-            default: false
-        }
-    ]
-}
+    export default {
+        name : 'FullHeightSection',
+        props : [
+            {
+                type: Boolean,
+                default: false
+            }
+        ]
+    }
 </script>
 
 <style lang="scss">

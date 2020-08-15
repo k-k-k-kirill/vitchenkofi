@@ -24,8 +24,6 @@ export default {
       waveSpeed: 0.25,
       zoom: 0.75
     })
-
-    console.log()
   },
   updated() {
     window.VANTA.current.resize()

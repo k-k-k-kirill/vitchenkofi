@@ -12,11 +12,6 @@
                         </h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <Nav />
-                    </div>
-                </div>
             </FullHeightSection>
             <FullHeightSection>
                 <div class="row mb-4">
@@ -40,7 +35,6 @@
 import Layout from '../components/Layout'
 import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 import FullHeightSection from '../components/FullHeightSection'
-import Nav from '../components/Nav'
 import ProjectTeaser from '../components/ProjectTeaser'
 import BigLink from '../components/BigLink'
 
@@ -50,7 +44,6 @@ export default {
         'Layout' : Layout,
         'OwnerPhotoReveal' : OwnerPhotoReveal,
         'FullHeightSection' : FullHeightSection,
-        'Nav' : Nav,
         'ProjectTeaser' : ProjectTeaser,
         'BigLink' : BigLink
     },

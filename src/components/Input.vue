@@ -1,17 +1,34 @@
 <template>
     <div :class="wrapperclasses">
-        <label v-if="label">{{ label }}</label>
-        <input :type="type ? type : 'text'" :value="value" :placeholder="placeholder" />
+        <label v-if="label != ''">{{ label }}</label>
+        <input :type="type" :value="value" :placeholder="placeholder" />
     </div>
 </template>
 
 <script>
     export default {
         name: 'Input',
-        props: [ 'type', 'placeholder', 'label', 'wrapperclasses' ],
+        props: {
+            type: {
+                type: String,
+                default: 'text'
+            },
+            placeholder: {
+                type: String,
+                default: ''
+            },
+            label: {
+                type: String,
+                default: ''
+            },
+            wrapperclasses: {
+                type: String,
+                default: ''
+            }
+        },
         data() {
             return {
-                value: ''
+                value: '',
             }
         }
     }
