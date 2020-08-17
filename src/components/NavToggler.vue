@@ -22,22 +22,27 @@
         methods: {
             onClick: function () {
                 this.isActive = !this.isActive
+                this.$root.$emit('navTogglerClicked')
             }
         }
     }
 </script>
 
 <style lang="scss">
+    $size: 50px;
+    $translate: ($size / 2) - 0.5px;
+
     .cube-container {
         position: fixed !important;
         top: 40px;
-        right: 65px;
+        right: 70px;
         display: inline-block;
-        width: 70px;
-        height: 70px;
+        width: $size;
+        height: $size;
         position: relative;
         perspective: 500px;
         margin: 0 auto;
+        z-index: 10000;
 
         &.active {
             #cube figure {
@@ -72,16 +77,18 @@
         text-align: center;
         backface-visibility: hidden;
         content: "";
-        background-image: url('https://media.giphy.com/media/tZOzL8Q6TnFEuojLkU/source.gif');
+        background-image: url('https://media.giphy.com/media/l3q2U2tIy0SvF1HSo/source.gif');
+        background-color: white;
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+        border: none;
     }
 
-    #cube .front  { transform: rotateY(   0deg ) translateZ( 35px ); }
-    #cube .back   { transform: rotateX( 180deg ) translateZ( 35px ); }
-    #cube .right  { transform: rotateY(  90deg ) translateZ( 35px ); }
-    #cube .left   { transform: rotateY( -90deg ) translateZ( 35px ); }
-    #cube .top    { transform: rotateX(  90deg ) translateZ( 35px ); }
-    #cube .bottom { transform: rotateX( -90deg ) translateZ( 35px ); }
+    #cube .front  { transform: rotateY(   0deg ) translateZ( $translate ); }
+    #cube .back   { transform: rotateX( 180deg ) translateZ( $translate ); }
+    #cube .right  { transform: rotateY(  90deg ) translateZ( $translate ); }
+    #cube .left   { transform: rotateY( -90deg ) translateZ( $translate ); }
+    #cube .top    { transform: rotateX(  90deg ) translateZ( $translate ); }
+    #cube .bottom { transform: rotateX( -90deg ) translateZ( $translate ); }
 </style>

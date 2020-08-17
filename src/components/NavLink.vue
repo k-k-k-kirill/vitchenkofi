@@ -1,6 +1,6 @@
 <template>
     <router-link class="navigation-link" ref="linkRef" :to="route">
-        {{ title }}
+        <h1>{{ title }}</h1>
     </router-link>
 </template>
 
