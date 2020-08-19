@@ -21,7 +21,7 @@
 
     .portfolio-link {
         position: relative;
-        z-index: 9999;
+        z-index: 8999;
 
         a {
             font-size: 5rem;

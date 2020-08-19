@@ -12,6 +12,8 @@
 </template>
 
 <script>
+    import {eventBus} from '../main'
+
     export default {
         name: 'NavToggler',
         data() {
@@ -22,7 +24,7 @@
         methods: {
             onClick: function () {
                 this.isActive = !this.isActive
-                this.$root.$emit('navTogglerClicked')
+                eventBus.$emit('navTogglerClicked')
             }
         }
     }
@@ -43,12 +45,6 @@
         perspective: 500px;
         margin: 0 auto;
         z-index: 10000;
-
-        &.active {
-            #cube figure {
-                background-image: url('https://media.giphy.com/media/fwzTXbxNVu8vz3nhag/source.gif');
-            }
-        }
     }
     #cube {
         width: 100%;
