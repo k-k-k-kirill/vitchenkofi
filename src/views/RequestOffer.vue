@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-11 offset-lg-1">
                     <BigLink title="About" route="/about" />
                 </div>
             </div>

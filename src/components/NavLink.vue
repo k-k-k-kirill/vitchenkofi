@@ -15,6 +15,12 @@ export default {
     .navigation-link {
         display: block;
         transition: all 0.15s ease-in-out;
+
+        h1 {
+            @include media-breakpoint-down(md) {
+                font-size: 2rem;
+            }
+        }
   
         &:hover,
         &:focus,

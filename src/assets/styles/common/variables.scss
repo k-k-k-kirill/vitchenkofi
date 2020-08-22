@@ -51,3 +51,7 @@ $container-max-widths: (
   lg: 960px,
   xl: 1400px
 ) !default;
+
+//Fluid type breakpoints
+$breakpoint-min: 18.75rem;
+$breakpoint-max: 75rem;

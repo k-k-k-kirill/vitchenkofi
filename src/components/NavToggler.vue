@@ -31,20 +31,24 @@
 </script>
 
 <style lang="scss">
-    $size: 50px;
-    $translate: ($size / 2) - 0.5px;
-
     .cube-container {
         position: fixed !important;
-        top: 40px;
-        right: 70px;
+        top: 50px;
+        right: 40px;
         display: inline-block;
-        width: $size;
-        height: $size;
+        width: 30px;
+        height: 30px;
         position: relative;
         perspective: 500px;
         margin: 0 auto;
         z-index: 10000;
+
+        @include media-breakpoint-up(md) {
+            top: 40px;
+            right: 70px;
+            width: 50px;
+            height: 50px;
+        }
     }
     #cube {
         width: 100%;
@@ -81,10 +85,19 @@
         border: none;
     }
 
-    #cube .front  { transform: rotateY(   0deg ) translateZ( $translate ); }
-    #cube .back   { transform: rotateX( 180deg ) translateZ( $translate ); }
-    #cube .right  { transform: rotateY(  90deg ) translateZ( $translate ); }
-    #cube .left   { transform: rotateY( -90deg ) translateZ( $translate ); }
-    #cube .top    { transform: rotateX(  90deg ) translateZ( $translate ); }
-    #cube .bottom { transform: rotateX( -90deg ) translateZ( $translate ); }
+    #cube .front  { transform: rotateY(   0deg ) translateZ( 14.5px ); }
+    #cube .back   { transform: rotateX( 180deg ) translateZ( 14.5px ); }
+    #cube .right  { transform: rotateY(  90deg ) translateZ( 14.5px ); }
+    #cube .left   { transform: rotateY( -90deg ) translateZ( 14.5px ); }
+    #cube .top    { transform: rotateX(  90deg ) translateZ( 14.5px ); }
+    #cube .bottom { transform: rotateX( -90deg ) translateZ( 14.5px ); }
+
+    @include media-breakpoint-up(md) {
+        #cube .front  { transform: rotateY(   0deg ) translateZ( 24.5px ); }
+        #cube .back   { transform: rotateX( 180deg ) translateZ( 24.5px ); }
+        #cube .right  { transform: rotateY(  90deg ) translateZ( 24.5px ); }
+        #cube .left   { transform: rotateY( -90deg ) translateZ( 24.5px ); }
+        #cube .top    { transform: rotateX(  90deg ) translateZ( 24.5px ); }
+        #cube .bottom { transform: rotateX( -90deg ) translateZ( 24.5px ); }
+    }
 </style>

@@ -1,9 +1,13 @@
 <template>
     <a ref="projectTeaserRef" :href="url" class="teaser-vit-project" :class="classes" data-img="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif">
-        <h2 class="h2 teaser-vit-project__title">{{ title }}</h2>
-            <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
-                {{ skillString }}
-            </div>
+        <img class="d-block d-md-none mb-2" src="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif" />
+        <h2 class="teaser-vit-project__title">{{ title }}</h2>
+        <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
+            {{ skillString }}
+        </div>
+        <div class="text-brick d-block d-md-none">
+            {{ skillString }}
+        </div>
     </a>
 </template>
 

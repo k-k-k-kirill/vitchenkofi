@@ -1,7 +1,7 @@
 <template>
   <div>
     <SiteOwner />
-    <OwnerLinks />
+    <OwnerLinks :hideOnMobile="true" />
     <NavToggler />
     <NavMenu />
     <div class="container">
