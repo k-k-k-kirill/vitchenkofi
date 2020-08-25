@@ -1,11 +1,11 @@
 <template>
     <a ref="projectTeaserRef" :href="url" class="teaser-vit-project" :class="classes" data-img="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif">
-        <img class="d-block d-md-none mb-2" src="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif" />
+        <img class="d-block d-xl-none mb-2 mobile-gif" src="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif" />
         <h2 class="teaser-vit-project__title">{{ title }}</h2>
         <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
             {{ skillString }}
         </div>
-        <div class="text-brick d-block d-md-none">
+        <div class="text-brick d-block d-xl-none">
             {{ skillString }}
         </div>
     </a>
@@ -53,12 +53,19 @@
             color: $cream;
 
             .teaser-vit-project__skillset {
-                height: 50px;
+                @include media-breakpoint-up(md) {
+                    height: 50px;
+                }
             }
         }
     }
 
     .hover-reveal {
         z-index: 0;
+    }
+
+    .mobile-gif {
+        width: 100%;
+        height: auto;
     }
 </style>

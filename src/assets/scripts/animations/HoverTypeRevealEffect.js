@@ -9,7 +9,11 @@ export default class HoverTypeTxtFx {
         addSpans(this.DOM.el)
         this.DOM.letters = [...this.DOM.el.querySelectorAll('span')];
         this.initEvents();
+        this.breakpoint = 1200
+    }
 
+    isDesktop() {
+        return window.matchMedia(`( min-width: ${this.breakpoint}px )`).matches
     }
     
     animateLetters() {
@@ -25,9 +29,10 @@ export default class HoverTypeTxtFx {
     initEvents() {
 
         this.mouseenterFn = () => {
-            this.animateLetters();
+            if ( this.isDesktop() ) {
+                this.animateLetters();
+            }
         };
-
 
         this.parent.addEventListener('mouseenter', this.mouseenterFn);
 

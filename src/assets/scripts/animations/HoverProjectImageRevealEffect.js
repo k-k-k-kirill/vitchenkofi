@@ -29,8 +29,13 @@ export default class HoverImgFx {
         this.DOM.revealInner = this.DOM.reveal.querySelector('.hover-reveal__inner');
         this.DOM.revealInner.style.overflow = 'hidden';
         this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
+        this.breakpoint = 1200
         this.initEvents();
 
+    }
+
+    isDesktop() {
+        return window.matchMedia(`( min-width: ${this.breakpoint}px )`).matches
     }
 
     initEvents() {
@@ -44,14 +49,20 @@ export default class HoverImgFx {
             this.DOM.reveal.style.left = `${mousePos.x+20-docScrolls.left}px`;
         };
         this.mouseenterFn = (ev) => {
-            this.positionElement(ev);
-            this.showImage();
+            if ( this.isDesktop() ) {
+                this.positionElement(ev);
+                this.showImage();
+            }
         };
         this.mousemoveFn = ev => requestAnimationFrame(() => {
-            this.positionElement(ev);
+            if ( this.isDesktop() ) {
+                this.positionElement(ev);
+            }
         });
         this.mouseleaveFn = () => {
-            this.hideImage();
+            if ( this.isDesktop() ) {
+                this.hideImage();
+            }
         };
         
         this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
@@ -62,8 +73,6 @@ export default class HoverImgFx {
     showImage() {
         TweenMax.killTweensOf(this.DOM.revealInner);
         TweenMax.killTweensOf(this.DOM.revealImg);
-
-        console.log('show image happened')
 
         this.tl = new TimelineMax({
             onStart: () => {
