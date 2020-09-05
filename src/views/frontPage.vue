@@ -16,9 +16,7 @@
             <FullHeightSection>
                 <div class="row mb-4">
                     <div class="col-lg-5 pt-2">
-                        <ProjectTeaser classes="d-block mb-4" url="https://www.facebook.com" title="Test project" :skills="skills" />
-                        <ProjectTeaser classes="d-block mb-4" url="https://www.facebook.com" title="Test project" :skills="skills" />
-                        <ProjectTeaser url="https://www.facebook.com" title="Test project" :skills="skills" />
+                        <ProjectTeaser v-for="project in this.asyncProjects.slice(0, 3)" :key="project.id" classes="d-block mb-4" :url="project.data.project_url.url" :image_url="project.data.image_url.url" :title="project.data.title[0].text" :skills="project.data.skills" />
                     </div>
                 </div>
                 <div class="row">
@@ -37,6 +35,7 @@ import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 import FullHeightSection from '../components/FullHeightSection'
 import ProjectTeaser from '../components/ProjectTeaser'
 import BigLink from '../components/BigLink'
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'FrontPage',
@@ -54,6 +53,9 @@ export default {
                 'WordPress'
             ]
         }
+    },
+    computed: {
+        ...mapGetters([ 'asyncProjects' ])
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <a ref="projectTeaserRef" :href="url" class="teaser-vit-project" :class="classes" data-img="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif">
-        <img class="d-block d-xl-none mb-2 mobile-gif" src="https://media.giphy.com/media/T8Dhl1KPyzRqU/source.gif" />
+    <a ref="projectTeaserRef" :href="url" target="_blank" class="teaser-vit-project" :class="classes" :data-img="image_url">
+        <img class="d-block d-xl-none mb-2 mobile-gif" :src="image_url" />
         <h2 class="teaser-vit-project__title">{{ title }}</h2>
         <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
             {{ skillString }}
@@ -17,10 +17,13 @@
 
     export default {
         name: 'ProjectTeaser',
-        props: [ 'skills', 'title', 'url', 'classes' ],
+        props: [ 'skills', 'title', 'url', 'classes', 'image_url' ],
         computed: {
             skillString: function () {
-                return this.$props.skills.join('')
+                let skillSlugs = this.$props.skills.map((skill) => {
+                    return skill.skill[0].text
+                })
+                return skillSlugs.join(' ')
             }
         },
         mounted() {

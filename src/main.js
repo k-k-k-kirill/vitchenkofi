@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/styles/main.scss'
+
+//Vuex
+import {store} from './store/store'
+
+//Prismic
 import PrismicVue from 'prismic-vue';
 import linkResolver from './link-resolver';
 
@@ -8,7 +13,6 @@ import linkResolver from './link-resolver';
 import VueRouter from 'vue-router'
 import routes from './routes'
 
-	
 Vue.use(PrismicVue, {
   endpoint: window.prismic.endpoint,
   linkResolver
@@ -27,5 +31,6 @@ export const eventBus = new Vue()
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
