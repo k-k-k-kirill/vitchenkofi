@@ -1,13 +1,12 @@
 <template>
   <div class="owner-links" :class="{ owner_links__static : isStatic, hide_on_mobile: hideOnMobile }">
-    <a target="_blank" href="#">FACEBOOK</a>
-    <a target="_blank" href="#">GITHUB</a>
-    <a target="_blank" href="#">LINKEDIN</a>
-    <a target="_blank" href="#">EMAIL</a>
+    <a class="text-uppercase" v-for="link in this.asyncOwnerLinks" :key="link.id" target="_blank" :href="link.data.link.url">{{ link.data.label[0].text }}</a>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
     name: "OwnerLinks",
     props: {
@@ -19,6 +18,11 @@
         type: Boolean,
         default: false
       }
+    },
+    computed: {
+      ...mapGetters([
+        'asyncOwnerLinks'
+      ])
     }
   };
 </script>

@@ -64,13 +64,6 @@ export default {
       ...mapMutations([
         'setOwnerImageUrl'
       ])
-    },
-    created() {
-        this.$prismic.client.query(
-            this.$prismic.Predicates.at('document.type', 'homepage')).then((response) => {
-                this.setOwnerImageUrl(response.results[0].data.owner_image.url)
-                console.log(response.results[0].data.owner_image.url)
-        })
     }
 }
 </script>

@@ -6,10 +6,14 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
+        owner_links: [],
         projects: [],
         owner_image_url: ''
     },
     mutations: {
+        setOwnerLinks: (state, ownerLinks) => {
+            return state.owner_links = ownerLinks
+        },
         setProjects: (state, projects) => {
            return state.projects = projects
         },
@@ -18,6 +22,9 @@ export const store = new Vuex.Store({
         }
     },
     getters: {
+        asyncOwnerLinks: (state) => {
+            return state.owner_links
+        },
         asyncProjects: (state) => {
             return state.projects
         },

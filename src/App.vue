@@ -12,13 +12,26 @@
   export default {
     name: "App",
     mounted() {
-      this.$prismic.client
-        .query(this.$prismic.Predicates.at("document.type", "project"))
-        .then((response) => {
-          this.setProjects(response.results);
-        });
+        this.$prismic.client
+          .query([
+            this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage"])
+          ])
+          .then((response) => {
+            this.setProjects(response.results.filter((result) => {
+              return result.type == 'project'
+            }));
+
+            this.setOwnerLinks(response.results.filter((result) => {
+              return result.type == 'owner_link'
+            }));
+
+            this.setOwnerImageUrl(response.results.filter((result) => {
+              return result.type == "homepage"
+            })[0].data.owner_image.url)
+          });
 
       let appRef = this.$refs.appRef;
+
       window.VANTA.WAVES({
         el: appRef,
         mouseControls: true,
@@ -37,7 +50,9 @@
     },
     methods: {
       ...mapMutations([
-        'setProjects'
+        'setProjects',
+        'setOwnerLinks',
+        'setOwnerImageUrl'
       ])
     }
   };
