@@ -14,7 +14,7 @@
     mounted() {
         this.$prismic.client
           .query([
-            this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage"])
+            this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage", "request_offer_page"])
           ])
           .then((response) => {
             this.setProjects(response.results.filter((result) => {
@@ -28,6 +28,10 @@
             this.setOwnerImageUrl(response.results.filter((result) => {
               return result.type == "homepage"
             })[0].data.owner_image.url)
+
+            this.setRequestOfferTextContent(response.results.filter((result) => {
+              return result.type == "request_offer_page"
+            })[0].data.content)
           });
 
       let appRef = this.$refs.appRef;
@@ -52,7 +56,8 @@
       ...mapMutations([
         'setProjects',
         'setOwnerLinks',
-        'setOwnerImageUrl'
+        'setOwnerImageUrl',
+        'setRequestOfferTextContent'
       ])
     }
   };

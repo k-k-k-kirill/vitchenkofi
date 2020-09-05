@@ -35,7 +35,7 @@ import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 import FullHeightSection from '../components/FullHeightSection'
 import ProjectTeaser from '../components/ProjectTeaser'
 import BigLink from '../components/BigLink'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'FrontPage',
@@ -59,11 +59,6 @@ export default {
             'asyncProjects',
             'ownerImageUrl'
         ]),
-    },
-    methods: {
-      ...mapMutations([
-        'setOwnerImageUrl'
-      ])
     }
 }
 </script>

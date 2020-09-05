@@ -6,13 +6,7 @@
                     <OfferRequestForm />
                 </div>
                 <div class="col-lg-4 col-xl-4 offset-xl-1">
-                    <p class="lead mb-2">
-                        Here you can request an offer from me by filling the form on the left. Please, note that I don't do graphic design, however, can recommend some of my partners.
-                    </p>
-
-                    <p class="lead">
-                        By the way, the form has a secret. Will you be the one to find it?
-                    </p>
+                    <prismic-rich-text :field="this.asyncRequestOfferTextContent"/>
                 </div>
             </div>
             <div class="row">
@@ -29,6 +23,7 @@
     import FullHeightSection from '../components/FullHeightSection'
     import OfferRequestForm from '../components/OfferRequestForm'
     import BigLink from '../components/BigLink'
+    import { mapGetters } from 'vuex'
 
     export default {
         name : 'RequestOffer',
@@ -37,6 +32,11 @@
             'OfferRequestForm': OfferRequestForm,
             'Layout': Layout,
             'BigLink': BigLink
+        },
+        computed: {
+            ...mapGetters([
+                'asyncRequestOfferTextContent'
+            ])
         }
     }
 </script>

@@ -8,7 +8,8 @@ export const store = new Vuex.Store({
     state: {
         owner_links: [],
         projects: [],
-        owner_image_url: ''
+        owner_image_url: '',
+        request_offer_text_content: ''
     },
     mutations: {
         setOwnerLinks: (state, ownerLinks) => {
@@ -19,6 +20,9 @@ export const store = new Vuex.Store({
         },
         setOwnerImageUrl: (state, url) => {
             return state.owner_image_url = url
+        },
+        setRequestOfferTextContent: (state, content) => {
+            return state.request_offer_text_content = content
         }
     },
     getters: {
@@ -27,6 +31,9 @@ export const store = new Vuex.Store({
         },
         asyncProjects: (state) => {
             return state.projects
+        },
+        asyncRequestOfferTextContent: (state) => {
+            return state.request_offer_text_content
         },
         ownerImageUrl: (state) => {
             return state.owner_image_url
