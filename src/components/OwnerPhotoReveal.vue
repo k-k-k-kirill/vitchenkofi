@@ -1,5 +1,5 @@
 <template>
-    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" data-img="./mugshot.png">
+    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" :data-img="image_url">
         <slot />
     </a>
 </template>
@@ -10,7 +10,7 @@
 
     export default {
         name: 'OwnerPhotoReveal',
-        props: ['imageUrl'],
+        props: ['image_url'],
         mounted() {
             let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
             new OwnerPhotoEffect(ownerPhotoRevealRef)

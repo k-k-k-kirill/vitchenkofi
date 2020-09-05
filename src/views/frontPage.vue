@@ -6,7 +6,7 @@
                     <div class="col-lg-6">
                         <h1>
                             Hello.<br>
-                            I am <OwnerPhotoReveal>Kirill.</OwnerPhotoReveal><br>
+                            I am <OwnerPhotoReveal :image_url="this.ownerImageUrl">Kirill.</OwnerPhotoReveal><br>
                             Front end<br>
                             developer.
                         </h1>
@@ -35,7 +35,7 @@ import OwnerPhotoReveal from '../components/OwnerPhotoReveal'
 import FullHeightSection from '../components/FullHeightSection'
 import ProjectTeaser from '../components/ProjectTeaser'
 import BigLink from '../components/BigLink'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
     name: 'FrontPage',
@@ -55,7 +55,22 @@ export default {
         }
     },
     computed: {
-        ...mapGetters([ 'asyncProjects' ])
+        ...mapGetters([
+            'asyncProjects',
+            'ownerImageUrl'
+        ]),
+    },
+    methods: {
+      ...mapMutations([
+        'setOwnerImageUrl'
+      ])
+    },
+    created() {
+        this.$prismic.client.query(
+            this.$prismic.Predicates.at('document.type', 'homepage')).then((response) => {
+                this.setOwnerImageUrl(response.results[0].data.owner_image.url)
+                console.log(response.results[0].data.owner_image.url)
+        })
     }
 }
 </script>
