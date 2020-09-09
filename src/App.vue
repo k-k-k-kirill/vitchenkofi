@@ -32,6 +32,10 @@
             this.setRequestOfferTextContent(response.results.filter((result) => {
               return result.type == "request_offer_page"
             })[0].data.content)
+
+            this.setFormThankYouMessage(response.results.filter((result) => {
+              return result.type == "request_offer_page"
+            })[0].data.form_success_message[0].text)
           });
 
       let appRef = this.$refs.appRef;
@@ -57,7 +61,8 @@
         'setProjects',
         'setOwnerLinks',
         'setOwnerImageUrl',
-        'setRequestOfferTextContent'
+        'setRequestOfferTextContent',
+        'setFormThankYouMessage'
       ])
     }
   };

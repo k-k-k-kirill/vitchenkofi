@@ -1,17 +1,25 @@
 <template>
     <div :class="wrapperclasses">
         <label v-if="label != ''">{{ label }}</label>
-        <input :type="type" :value="value" :placeholder="placeholder" />
+        <input :name="name" :type="type" :value="visitorData[name]" @input="this.handleChange" :placeholder="placeholder + (required ? '*' : '')" />
+        <span class="error-message" v-if="this.formErrors[name]">{{ this.formErrors[name] }}</span>
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
+
     export default {
         name: 'Input',
         props: {
             type: {
                 type: String,
                 default: 'text'
+            },
+            name: {
+                type: String,
+                default: '',
+                required: true
             },
             placeholder: {
                 type: String,
@@ -24,11 +32,24 @@
             wrapperclasses: {
                 type: String,
                 default: ''
+            },
+            required: {
+                type: Boolean,
+                default: false
             }
         },
-        data() {
-            return {
-                value: '',
+        computed: {
+            ...mapGetters([
+                'visitorData',
+                'formErrors'
+            ])
+        },
+        methods: {
+            handleChange(e) {
+                this.$store.commit('setVisitorDataValue', { 
+                    key: this.name,
+                    value: e.target.value
+                 })
             }
         }
     }
@@ -55,5 +76,11 @@
         &:focus {
             opacity: 0.7;
         }
+    }
+
+    .error-message {
+        display: block;
+        margin-top: 0.5rem;
+        color: white;
     }
 </style>

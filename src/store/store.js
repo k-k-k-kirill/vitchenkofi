@@ -9,7 +9,18 @@ export const store = new Vuex.Store({
         owner_links: [],
         projects: [],
         owner_image_url: '',
-        request_offer_text_content: ''
+        request_offer_text_content: [],
+        form_thank_you_message: '',
+        visitor: {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        },
+        formErrors: {
+            email: '',
+            message: ''
+        }
     },
     mutations: {
         setOwnerLinks: (state, ownerLinks) => {
@@ -23,6 +34,22 @@ export const store = new Vuex.Store({
         },
         setRequestOfferTextContent: (state, content) => {
             return state.request_offer_text_content = content
+        },
+        setFormThankYouMessage: (state, content) => {
+            return state.form_thank_you_message = content
+        },
+        setVisitorDataValue: (state, data) => {
+            return state.visitor[data.key] = data.value
+        },
+        setFormErrorValue: (state, data) => {
+            return state.formErrors[data.key] = data.value
+        },
+        clearFormErrors: (state) => {
+            for( let key in state.formErrors ) {
+                state.formErrors[key] = ""
+            }
+
+            return state.formErrors
         }
     },
     getters: {
@@ -37,6 +64,12 @@ export const store = new Vuex.Store({
         },
         ownerImageUrl: (state) => {
             return state.owner_image_url
+        },
+        visitorData: (state) => {
+            return state.visitor
+        },
+        formErrors: (state) => {
+            return state.formErrors
         }
     }
 })

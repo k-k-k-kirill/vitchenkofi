@@ -6,10 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.2.5",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.1",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
@@ -18,6 +21,7 @@
     "express": "^4.17.1",
     "gsap": "^3.4.2",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "prismic-dom": "^2.2.3",
     "prismic-javascript": "^3.0.2",
     "prismic-vue": "^2.0.1",

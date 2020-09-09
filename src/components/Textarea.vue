@@ -1,15 +1,34 @@
 <template>
-    <textarea :class="classes" rows="6" :placeholder="placeholder" :value="value">
-    </textarea>
+    <div>
+        <textarea :name="name" :class="classes" rows="6" :placeholder="placeholder + (required ? '*' : '')" @input="this.handleChange" :value="visitorData[name]">
+        </textarea>
+        <span class="error-message" v-if="this.formErrors[name]">{{ this.formErrors[name] }}</span>
+    </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
+
     export default {
         name: 'Textarea',
-        props: [ 'placeholder', 'classes' ],
+        props: [ 'placeholder', 'classes', 'name', 'required' ],
         data() {
             return {
                 value: ''
+            }
+        },
+        computed: {
+            ...mapGetters([
+                'visitorData',
+                'formErrors'
+            ])
+        },
+        methods: {
+            handleChange(e) {
+                this.$store.commit('setVisitorDataValue', { 
+                    key: this.name,
+                    value: e.target.value
+                 })
             }
         }
     }
