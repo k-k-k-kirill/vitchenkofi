@@ -11,6 +11,9 @@ export const store = new Vuex.Store({
         owner_image_url: '',
         request_offer_text_content: [],
         form_thank_you_message: '',
+        about_left_column_content: [],
+        about_skills: [],
+        about_contact_details: [],
         visitor: {
             name: '',
             email: '',
@@ -50,6 +53,15 @@ export const store = new Vuex.Store({
             }
 
             return state.formErrors
+        },
+        setAboutLeftColumnContent: (state, content) => {
+            return state.about_left_column_content = content
+        },
+        setAboutSkills: (state, content) => {
+            return state.about_skills = content
+        },
+        setAboutContactDetails: (state, content) => {
+            return state.about_contact_details = content
         }
     },
     getters: {
@@ -70,6 +82,15 @@ export const store = new Vuex.Store({
         },
         formErrors: (state) => {
             return state.formErrors
+        },
+        aboutLeftColumnContent: (state) => {
+            return state.about_left_column_content
+        },
+        aboutSkills: (state) => {
+            return state.about_skills
+        },
+        aboutContactDetails: (state) => {
+            return state.about_contact_details
         }
     }
 })

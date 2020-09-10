@@ -37,6 +37,11 @@ h3,
   font-weight: bold;
 }
 
+h5,
+.h5 {
+  @extend .lead;
+}
+
 a {
   color: $cream;
   font-family: $font-family-base;

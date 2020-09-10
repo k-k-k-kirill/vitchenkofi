@@ -14,7 +14,7 @@
     mounted() {
         this.$prismic.client
           .query([
-            this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage", "request_offer_page"])
+            this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage", "request_offer_page", "about_page"])
           ])
           .then((response) => {
             this.setProjects(response.results.filter((result) => {
@@ -36,6 +36,18 @@
             this.setFormThankYouMessage(response.results.filter((result) => {
               return result.type == "request_offer_page"
             })[0].data.form_success_message[0].text)
+
+            this.setAboutLeftColumnContent(response.results.filter((result) => {
+              return result.type == "about_page"
+            })[0].data.left_column_content)
+
+            this.setAboutSkills(response.results.filter((result) => {
+              return result.type == "about_page"
+            })[0].data.skills)
+
+            this.setAboutContactDetails(response.results.filter((result) => {
+              return result.type == "about_page"
+            })[0].data.contact_details)
           });
 
       let appRef = this.$refs.appRef;
@@ -62,7 +74,10 @@
         'setOwnerLinks',
         'setOwnerImageUrl',
         'setRequestOfferTextContent',
-        'setFormThankYouMessage'
+        'setFormThankYouMessage',
+        'setAboutLeftColumnContent',
+        'setAboutSkills',
+        'setAboutContactDetails'
       ])
     }
   };
