@@ -56,7 +56,7 @@
 .hide_on_mobile {
   display: none;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -67,7 +67,11 @@
   position: static;
   transform: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
 }
 </style>

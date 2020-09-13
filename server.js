@@ -18,7 +18,7 @@ app.use(history({
 }))
 
 var corsOptions = {
-    origin: 'http://localhost:8080'
+    origin: ['https://vitchenkofi.herokuapp.com', 'https://vitchenko.fi']
 }
 
 app.use(cors(corsOptions))

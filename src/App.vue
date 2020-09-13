@@ -57,7 +57,7 @@
         mouseControls: true,
         touchControls: true,
         scale: 3.0,
-        scaleMobile: 1.0,
+        scaleMobile: 3.0,
         THREE: THREE,
         color: 0x0,
         shininess: 12,
@@ -85,8 +85,8 @@
 
 <style lang="scss">
   #app {
-    width: 100vw;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     z-index: 9999;
   }
 

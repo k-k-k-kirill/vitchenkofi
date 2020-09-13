@@ -50,8 +50,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 100vh;
-            width: 100vw;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
