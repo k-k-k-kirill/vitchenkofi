@@ -58,7 +58,7 @@
             },
             handleSubmit() {
                 if ( this.validateForm() ) {
-                    axios.post('http://localhost:3000/mailer', this.$store.state.visitor).then(() => {
+                    axios.post('https://vitchenkofi.herokuapp.com/mailer', this.$store.state.visitor).then(() => {
                         this.submitted = true
                     })
                 }

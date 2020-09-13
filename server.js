@@ -25,23 +25,30 @@ app.use(cors(corsOptions))
 
 app.post('/mailer', async (req, res) => {
     try {
-        const msg = {
-            to: 'vitchenko.kirill@gmail.com',
-            from: 'vitchenko.kirill@gmail.com',
-            subject: 'Form submission on vitchenko.fi',
-            text: 
-            `Name: ${req.body.name} \nEmail: ${req.body.email}\nSubject: ${req.body.subject}\nMessage: ${req.body.message}`,
-            html: `<p><strong>Name:  </strong>${req.body.name}</p>
-                   <p><strong>Email:  </strong>${req.body.email}</p>
-                   <p><strong>Subject:  </strong>${req.body.subject}</p>
-                   <p><strong>Message:  </strong>${req.body.message}</p>`
-        };
+        if ( req.body.email && req.body.message ) {
+            const msg = {
+                to: 'vitchenko.kirill@gmail.com',
+                from: 'vitchenko.kirill@gmail.com',
+                subject: 'Form submission on vitchenko.fi',
+                text: 
+                `Name: ${req.body.name} \nEmail: ${req.body.email}\nSubject: ${req.body.subject}\nMessage: ${req.body.message}`,
+                html: `<p><strong>Name:  </strong>${req.body.name}</p>
+                       <p><strong>Email:  </strong>${req.body.email}</p>
+                       <p><strong>Subject:  </strong>${req.body.subject}</p>
+                       <p><strong>Message:  </strong>${req.body.message}</p>`
+            };
+    
+            await mailer.send(msg);
+    
+            res.status(200).json({
+                message: "Your message has been forwarded to Kirill. Thanks for contacting!",
+            });
+        } else {
+            res.status(404).json({
+                message: "Please, provide enough details to put your message forward."
+            })
+        }
 
-        await mailer.send(msg);
-
-        res.status(200).json({
-            message: "Your message has been forwarded to Kirill. Thanks for contacting!",
-        });
     } catch(err) {
         res.status(500).json({
             status: 500,
