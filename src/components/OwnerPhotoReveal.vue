@@ -11,7 +11,7 @@
     export default {
         name: 'OwnerPhotoReveal',
         props: ['image_url'],
-        updated() {
+        mounted() {
             let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
             new OwnerPhotoEffect(ownerPhotoRevealRef)
         }
