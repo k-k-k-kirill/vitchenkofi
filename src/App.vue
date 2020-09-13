@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import WAVES from "./assets/scripts/background/vanta.waves.min.js"; // eslint-disable-line
-  import * as THREE from "./assets/scripts/background/three.r95.min";
+  import WAVES from "vanta/dist/vanta.waves.min"; // eslint-disable-line
+  import * as THREE from 'three'
   import { mapMutations } from 'vuex';
 
   export default {

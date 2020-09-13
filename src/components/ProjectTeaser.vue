@@ -26,7 +26,7 @@
                 return skillSlugs.join(' ')
             }
         },
-        updated() {
+        mounted() {
             let { skillSetRef } = this.$refs
             new HoverTypeRevealEffect(skillSetRef)
 

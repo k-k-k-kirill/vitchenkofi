@@ -8399,6 +8399,11 @@ thread-loader@^2.1.3:
     loader-utils "^1.1.0"
     neo-async "^2.6.0"
 
+three@^0.120.1:
+  version "0.120.1"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.120.1.tgz#dbd8894f8ab87c109f1602933e7c740c98137377"
+  integrity sha512-ktaCRFUR7JUZcKec+cBRz+oBex5pOVaJhrtxvFF2T7on53o9UkEux+/Nh1g/4zeb4t/pbxIFcADbn/ACu3LC1g==
+
 through2@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -8838,6 +8843,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanta@^0.5.19:
+  version "0.5.19"
+  resolved "https://registry.yarnpkg.com/vanta/-/vanta-0.5.19.tgz#6377a595ab651710242cb1da983e2955a00efc61"
+  integrity sha512-B6sCekR+to90YMxp65lDUzgexM8MAP8zFpRVV0lFkLeVjY43lx24glTkMw4/um7uQItcFdP5a1kyPKQpGncaNQ==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
