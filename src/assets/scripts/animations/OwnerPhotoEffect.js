@@ -33,7 +33,6 @@ export default class HoverImgFx3 {
         this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
         this.DOM.letters = [...this.DOM.el.querySelectorAll('span')];
         this.initEvents();
-
     }
     
     animateLetters() {
