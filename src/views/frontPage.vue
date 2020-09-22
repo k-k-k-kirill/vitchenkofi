@@ -7,7 +7,7 @@
                         <h1>
                             Hello.<br>
                             I am <OwnerPhotoReveal :image_url="this.ownerImageUrl">Kirill.</OwnerPhotoReveal><br>
-                            Front end<br>
+                            Full stack web<br>
                             developer.
                         </h1>
                     </div>
