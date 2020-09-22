@@ -1,5 +1,5 @@
 <template>
-    <a v-if="this.$store.state.asyncDataReady" ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" :data-img="image_url">
+    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" :data-img="image_url">
         <slot />
     </a>
 </template>

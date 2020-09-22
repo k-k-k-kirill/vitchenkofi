@@ -1,5 +1,5 @@
 <template>
-    <a v-if="this.$store.state.asyncDataReady" ref="projectTeaserRef" :href="url" target="_blank" class="teaser-vit-project" :class="classes" :data-img="image_url">
+    <a ref="projectTeaserRef" :href="url" target="_blank" class="teaser-vit-project" :class="classes" :data-img="image_url">
         <img class="d-block d-xl-none mb-2 mobile-gif" :src="image_url" />
         <h2 class="teaser-vit-project__title">{{ title }}</h2>
         <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
