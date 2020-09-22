@@ -1,5 +1,5 @@
 <template>
-    <a ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" :data-img="image_url">
+    <a v-if="this.$store.state.asyncDataReady" ref="ownerPhotoRevealRef" class="js-owner-photo-on-hover block__title" :data-img="image_url">
         <slot />
     </a>
 </template>
@@ -11,7 +11,7 @@
     export default {
         name: 'OwnerPhotoReveal',
         props: ['image_url'],
-        mounted() {
+        updated() {
             let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
             new OwnerPhotoEffect(ownerPhotoRevealRef)
         }

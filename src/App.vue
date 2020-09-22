@@ -12,6 +12,21 @@
   export default {
     name: "App",
     mounted() {
+          let appRef = this.$refs.appRef;
+
+          window.VANTA.WAVES({
+            el: appRef,
+            mouseControls: true,
+            touchControls: true,
+            scale: 3.0,
+            scaleMobile: 3.0,
+            THREE: THREE,
+            color: 0x0,
+            shininess: 12,
+            waveSpeed: 0.25,
+            zoom: 0.75,
+          });
+
         this.$prismic.client
           .query([
             this.$prismic.Predicates.any("document.type", ["project", "owner_link", "homepage", "request_offer_page", "about_page"])
@@ -48,22 +63,10 @@
             this.setAboutContactDetails(response.results.filter((result) => {
               return result.type == "about_page"
             })[0].data.contact_details)
+
+            this.setAsyncDataReady()
+
           });
-
-      let appRef = this.$refs.appRef;
-
-      window.VANTA.WAVES({
-        el: appRef,
-        mouseControls: true,
-        touchControls: true,
-        scale: 3.0,
-        scaleMobile: 3.0,
-        THREE: THREE,
-        color: 0x0,
-        shininess: 12,
-        waveSpeed: 0.25,
-        zoom: 0.75,
-      });
     },
     updated() {
       window.VANTA.current.resize();
@@ -77,7 +80,8 @@
         'setFormThankYouMessage',
         'setAboutLeftColumnContent',
         'setAboutSkills',
-        'setAboutContactDetails'
+        'setAboutContactDetails',
+        'setAsyncDataReady'
       ])
     }
   };

@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
+        asyncDataReady: false,
         owner_links: [],
         projects: [],
         owner_image_url: '',
@@ -26,6 +27,9 @@ export const store = new Vuex.Store({
         }
     },
     mutations: {
+        setAsyncDataReady: (state) => {
+            return state.asyncDataReady = true
+        },
         setOwnerLinks: (state, ownerLinks) => {
             return state.owner_links = ownerLinks
         },
