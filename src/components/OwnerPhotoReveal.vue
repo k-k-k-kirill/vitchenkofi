@@ -11,6 +11,12 @@
     export default {
         name: 'OwnerPhotoReveal',
         props: ['image_url'],
+        mounted() {
+            if ( this.$store.state.asyncDataReady ) {
+                let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
+                new OwnerPhotoEffect(ownerPhotoRevealRef)
+            }
+        },
         updated() {
             let ownerPhotoRevealRef = this.$refs.ownerPhotoRevealRef
             new OwnerPhotoEffect(ownerPhotoRevealRef)

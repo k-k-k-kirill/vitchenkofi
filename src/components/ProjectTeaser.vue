@@ -27,6 +27,15 @@
             }
         },
         mounted() {
+            if ( this.$store.state.asyncDataReady ) {
+                let { skillSetRef } = this.$refs
+                new HoverTypeRevealEffect(skillSetRef)
+
+                let { projectTeaserRef } = this.$refs
+                new HoverProjectImageRevealEffect(projectTeaserRef)
+            }
+        },
+        updated() {
             let { skillSetRef } = this.$refs
             new HoverTypeRevealEffect(skillSetRef)
 
