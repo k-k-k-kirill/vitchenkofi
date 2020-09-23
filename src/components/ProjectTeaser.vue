@@ -5,7 +5,7 @@
         <div ref="skillSetRef" class="teaser-vit-project__skillset text-brick">
             {{ skillString }}
         </div>
-        <div class="text-brick d-block d-xl-none">
+        <div class="text-brick d-block d-xl-none mobile-skills">
             {{ skillString }}
         </div>
     </a>
@@ -23,7 +23,7 @@
                 let skillSlugs = this.$props.skills.map((skill) => {
                     return skill.skill[0].text
                 })
-                return skillSlugs.join(' ')
+                return skillSlugs.join('')
             }
         },
         mounted() {
@@ -79,5 +79,9 @@
     .mobile-gif {
         width: 100%;
         height: auto;
+    }
+
+    .mobile-skills {
+        word-wrap: break-word;
     }
 </style>

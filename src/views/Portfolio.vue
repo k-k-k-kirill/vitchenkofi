@@ -2,7 +2,7 @@
     <Layout>
         <FullHeightSection>
             <div class="row">
-                <div class="col-lg-5 pt-2">
+                <div class="col-lg-8 col-xl-6 pt-2">
                     <ProjectTeaser v-for="project in this.asyncProjects" :key="project.id" classes="d-block mb-4" :url="project.data.project_url.url" :image_url="project.data.image_url.url" :title="project.data.title[0].text" :skills="project.data.skills" />
                 </div>
             </div>

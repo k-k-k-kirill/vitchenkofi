@@ -67,8 +67,9 @@
   position: static;
   transform: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  font-size: 1rem;
 
   @include media-breakpoint-up(md) {
     flex-direction: row;

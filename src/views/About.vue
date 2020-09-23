@@ -2,10 +2,10 @@
     <Layout>
         <FullHeightSection>
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 mb-3 mb-lg-0">
                     <prismic-rich-text :field="aboutLeftColumnContent"/>
                 </div>
-                <div class="col-lg-3 offset-lg-5">
+                <div class="col-lg-2 offset-lg-5">
                     <div class="mb-4">
                         <h3 class="mb-1">Skills</h3>
                         <div class="smaller">
