@@ -4,10 +4,10 @@ import RequestOffer from "./views/RequestOffer.vue";
 import About from "./views/About.vue";
 
 const routes = [
-  { path: "", component: FrontPage },
-  { path: "/portfolio", component: Portfolio },
-  { path: "/request-offer", component: RequestOffer },
-  { path: "/about", component: About },
+  { path: "", component: FrontPage, meta: { title: "Kirill Vitchenko" } },
+  { path: "/portfolio", component: Portfolio, meta: { title: "Portfolio" } },
+  { path: "/request-offer", component: RequestOffer, meta: { title: "Request Offer" } },
+  { path: "/about", component: About, meta: { title: "About" } },
 ];
 
 export default routes;
