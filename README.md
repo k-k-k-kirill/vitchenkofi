@@ -1,4 +1,4 @@
-# vitchenko
+# Vitchenko
 
 ## Project setup
 ```
