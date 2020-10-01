@@ -29,7 +29,7 @@ app.post('/mailer', async (req, res) => {
             const msg = {
                 to: 'vitchenko.kirill@gmail.com',
                 from: 'vitchenko.kirill@gmail.com',
-                subject: 'Form submission on vitchenko.fi',
+                subject: 'Form submission on vitchenko.dev',
                 text: 
                 `Name: ${req.body.name} \nEmail: ${req.body.email}\nSubject: ${req.body.subject}\nMessage: ${req.body.message}`,
                 html: `<p><strong>Name:  </strong>${req.body.name}</p>
